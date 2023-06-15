@@ -8,6 +8,9 @@ on:
 env:
     PLUGIN_NAME: obsidian-git
 
+permissions:
+  contents: write
+
 jobs:
     build:
         runs-on: ubuntu-latest
