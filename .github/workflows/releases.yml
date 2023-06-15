@@ -2,8 +2,8 @@ name: Build obsidian plugin
 
 on:
     push:
-        tags:
-            - "*"
+#        tags:
+#            - "*"
 
 env:
     PLUGIN_NAME: obsidian-git
@@ -35,7 +35,7 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                   tag_name: ${{ github.ref }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  #token: ${{ secrets.GITHUB_TOKEN }}
                   name: ${{ github.ref }}
                   generate_release_notes: true
                   draft: false
