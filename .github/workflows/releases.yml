@@ -32,13 +32,12 @@ jobs:
                   echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
             - name: Create Release
               id: create_release
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  VERSION: ${{ github.ref }}
+              uses: softprops/action-gh-release@v1
               with:
                   tag_name: ${{ github.ref }}
-                  release_name: ${{ github.ref }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  name: ${{ github.ref }}
+                  generate_release_notes: true
                   draft: false
                   prerelease: false
             - name: Upload zip file
