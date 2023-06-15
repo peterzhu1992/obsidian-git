@@ -39,7 +39,7 @@ jobs:
               with:
                   tag_name: ${{ github.ref }}
                   #token: ${{ secrets.GITHUB_TOKEN }}
-                  name: ${{ github.ref }}
+                  #name: ${{ github.ref }}
                   generate_release_notes: true
                   draft: false
                   prerelease: false
